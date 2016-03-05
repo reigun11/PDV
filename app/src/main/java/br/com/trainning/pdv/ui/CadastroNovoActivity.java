@@ -2,6 +2,7 @@ package br.com.trainning.pdv.ui;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,6 +18,7 @@ import java.io.IOException;
 
 import br.com.trainning.pdv.R;
 import br.com.trainning.pdv.domain.model.Produto;
+import br.com.trainning.pdv.domain.util.Base64Util;
 import br.com.trainning.pdv.domain.util.ImageInputHelper;
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -66,7 +68,8 @@ public class CadastroNovoActivity extends BaseActivity implements ImageInputHelp
                 }else{
                     produto.setPreco(0.0);
                 }
-                produto.setFoto("");
+                Bitmap imagem = ((BitmapDrawable)imageViewFoto.getDrawable()).getBitmap();
+                produto.setFoto(Base64Util.encodeTobase64(imagem));
                 produto.save();
                 finish();
             }

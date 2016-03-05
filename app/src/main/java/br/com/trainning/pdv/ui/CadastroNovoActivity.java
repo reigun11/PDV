@@ -14,14 +14,10 @@ import butterknife.Bind;
 
 public class CadastroNovoActivity extends BaseActivity {
 
-    @Bind(R.id.editTextDescricao)
-    EditText editTextDescricao;
-    @Bind(R.id.editTextUnidade)
-    EditText editTextUnidade;
-    @Bind(R.id.editTextPreco)
-    EditText editTextPreco;
-    @Bind(R.id.editTextCodigo)
-    EditText editTextCodigo;
+    @Bind(R.id.editTextDescricao) EditText editTextDescricao;
+    @Bind(R.id.editTextUnidade) EditText editTextUnidade;
+    @Bind(R.id.editTextPreco) EditText editTextPreco;
+    @Bind(R.id.editTextCodigo) EditText editTextCodigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

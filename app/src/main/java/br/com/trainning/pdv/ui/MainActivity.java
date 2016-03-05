@@ -1,13 +1,17 @@
-package br.com.trainning.pdv;
+package br.com.trainning.pdv.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import br.com.trainning.pdv.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,10 +44,21 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        int id = item.getItemId();// pega o elemento do item e aciona
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_novo) { // Reconhecer o elemento action_novo e direciona para a tela de CadastroNovoActivity
+            //Log.d("MainActivity", "Selecionou novo Produto"); // mostra do debug a a atividade da tela principal quando acionado este elemento
+            //return true;
+            Intent telaCadastroNovoIntent = new Intent(MainActivity.this,CadastroNovoActivity.class); //Intenção é  criar a funcao e direcionar a activity atual para a CadastroNovoActivity
+            startActivity(telaCadastroNovoIntent); //roda a intencao
+            //
+
+
+
+        }else if(id == R.id.action_edit){
+
+            Log.d("MainActivity", "Selecionou editar Produto");
             return true;
         }
 

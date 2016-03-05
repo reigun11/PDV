@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">PDV</string>
     <string name="action_settings">Settings</string>
+    <string name="action_novo">Novo Produto</string>
+    <string name="action_edit">Editar Produto</string>
+    <string name="title_activity_cadastro_novo">CadastroNovoActivity</string>
+
 </resources>

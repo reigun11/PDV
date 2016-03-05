@@ -1,5 +1,20 @@
 package br.com.trainning.pdv.ui;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.ImageView;
+
+import java.io.File;
+import java.io.IOException;
+
+import br.com.trainning.pdv.R;
+import br.com.trainning.pdv.domain.ImageInputHelper;
+
 public class SelectImageActivity extends ActionBarActivity implements ImageInputHelper.ImageActionListener {
 
     private ImageInputHelper imageInputHelper;

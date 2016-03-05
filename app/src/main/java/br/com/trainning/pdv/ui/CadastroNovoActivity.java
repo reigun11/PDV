@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 import br.com.trainning.pdv.R;
+import br.com.trainning.pdv.domain.model.Produto;
 import br.com.trainning.pdv.domain.util.ImageInputHelper;
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -35,6 +36,7 @@ public class CadastroNovoActivity extends BaseActivity implements ImageInputHelp
     ImageView getImageButtonGaleria;
 
     private ImageInputHelper imageInputHelper;
+    private Produto produto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,18 @@ public class CadastroNovoActivity extends BaseActivity implements ImageInputHelp
                 Log.d("Cadastro", editTextUnidade.getText().toString());
                 Log.d("Cadastro", editTextPreco.getText().toString());
                 Log.d("Cadastro", editTextCodigo.getText().toString());
-
+                produto = new Produto();
+                produto.setId(0L);
+                produto.setDescricao(editTextDescricao.getText().toString());
+                produto.setUnidade(editTextUnidade.getText().toString());
+                produto.setCodigoBarras(editTextCodigo.getText().toString());
+                if(!editTextPreco.getText().toString().equals("")){
+                    produto.setPreco(Double.parseDouble(editTextPreco.getText().toString()));
+                }else{
+                    produto.setPreco(0.0);
+                }
+                produto.setFoto("");
+                produto.save();
             }
         });
     }

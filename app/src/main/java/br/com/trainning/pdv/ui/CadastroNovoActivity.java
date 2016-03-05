@@ -10,12 +10,17 @@ import android.view.View;
 import android.widget.EditText;
 
 import br.com.trainning.pdv.R;
+import butterknife.Bind;
 
-public class CadastroNovoActivity extends AppCompatActivity {
+public class CadastroNovoActivity extends BaseActivity {
 
+    @Bind(R.id.editTextDescricao)
     EditText editTextDescricao;
-    EditText editTextTextUnidade;
+    @Bind(R.id.editTextUnidade)
+    EditText editTextUnidade;
+    @Bind(R.id.editTextPreco)
     EditText editTextPreco;
+    @Bind(R.id.editTextCodigo)
     EditText editTextCodigo;
 
     @Override
@@ -25,17 +30,12 @@ public class CadastroNovoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        editTextDescricao = (EditText)findViewById(R.id.editTextDescricao);
-        editTextTextUnidade = (EditText)findViewById(R.id.editTextUnidade);
-        editTextPreco = (EditText)findViewById(R.id.editTextPreco);
-        editTextCodigo = (EditText)findViewById(R.id.editTextCodigo);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("Cadastro", editTextDescricao.getText().toString());
-                Log.d("Cadastro", editTextTextUnidade.getText().toString());
+                Log.d("Cadastro", editTextUnidade.getText().toString());
                 Log.d("Cadastro", editTextPreco.getText().toString());
                 Log.d("Cadastro", editTextCodigo.getText().toString());
 

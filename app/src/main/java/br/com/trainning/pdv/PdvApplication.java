@@ -26,10 +26,13 @@ public class PdvApplication extends Application {
             @Override
             protected void doMigration(SQLiteDatabase db) {
                 db.execSQL(
-                        "CREATE TABLE Notes (" +
+                        "CREATE TABLE produto (" +
                                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
-                                "title TEXT,"+
-                                "body TEXT"+
+                                "descricao TEXT,"+
+                                "unidade TEXT"+
+                                "preco REAL"+
+                                "codigo_barra TEXT"+
+                                "foto TEXT"+
                                 ")"
                 );
             }

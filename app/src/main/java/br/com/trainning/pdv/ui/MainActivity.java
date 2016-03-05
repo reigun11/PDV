@@ -76,14 +76,15 @@ public class MainActivity extends BaseActivity {
             //return true;
             Intent telaCadastroNovoIntent = new Intent(MainActivity.this,CadastroNovoActivity.class); //Intenção é  criar a funcao e direcionar a activity atual para a CadastroNovoActivity
             startActivity(telaCadastroNovoIntent); //roda a intencao
-            //
+
 
 
 
         }else if(id == R.id.action_edit){
-
-            Log.d("MainActivity", "Selecionou editar Produto");
-            return true;
+            //Log.d("MainActivity", "Selecionou editar Produto");
+           // return true;5
+            Intent telaEditarIntent = new Intent(MainActivity.this,EditarProdutoActivity.class); //Intenção é  criar a funcao e direcionar a activity atual para a CadastroNovoActivity
+            startActivity(telaEditarIntent);
         }
 
         return super.onOptionsItemSelected(item);

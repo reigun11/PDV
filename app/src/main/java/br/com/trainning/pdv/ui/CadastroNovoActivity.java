@@ -6,8 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 import br.com.trainning.pdv.R;
-import br.com.trainning.pdv.domain.ImageInputHelper;
+import br.com.trainning.pdv.domain.util.ImageInputHelper;
 import butterknife.Bind;
 import butterknife.OnClick;
 

@@ -1,4 +1,4 @@
-package br.com.trainning.pdv.domain;
+package br.com.trainning.pdv.domain.util;
 
 import android.app.Activity;
 import android.content.Intent;

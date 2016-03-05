@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 import br.com.trainning.pdv.R;
-import br.com.trainning.pdv.domain.ImageInputHelper;
+import br.com.trainning.pdv.domain.util.ImageInputHelper;
 
 public class SelectImageActivity extends ActionBarActivity implements ImageInputHelper.ImageActionListener {
 

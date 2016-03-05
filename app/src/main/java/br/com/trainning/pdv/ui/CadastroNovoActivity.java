@@ -68,6 +68,7 @@ public class CadastroNovoActivity extends BaseActivity implements ImageInputHelp
                 }
                 produto.setFoto("");
                 produto.save();
+                finish();
             }
         });
     }

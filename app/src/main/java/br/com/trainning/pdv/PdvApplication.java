@@ -29,9 +29,9 @@ public class PdvApplication extends Application {
                         "CREATE TABLE produto (" +
                                 "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                                 "descricao TEXT,"+
-                                "unidade TEXT"+
-                                "preco REAL"+
-                                "codigo_barra TEXT"+
+                                "unidade TEXT,"+
+                                "preco REAL,"+
+                                "codigo_barra TEXT,"+
                                 "foto TEXT"+
                                 ")"
                 );

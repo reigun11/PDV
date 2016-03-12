@@ -18,4 +18,103 @@
         android:id="@+id/spinner"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Descrição"
+        android:id="@+id/textViewDescricao"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextDescricao"
+        android:layout_below="@+id/textViewDescricao"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Unidade"
+        android:id="@+id/textViewUnidade"
+        android:layout_below="@+id/editTextDescricao"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextUnidade"
+        android:layout_below="@+id/textViewUnidade"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editTextDescricao" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Preço"
+        android:id="@+id/textViewPreco"
+        android:layout_below="@+id/editTextUnidade"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextPreco"
+        android:layout_below="@+id/textViewPreco"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Código de Barras"
+        android:id="@+id/textViewCodigo"
+        android:layout_below="@+id/editTextPreco"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextCodigo"
+        android:layout_below="@+id/textViewCodigo"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editTextUnidade" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageViewFoto"
+        android:src="@drawable/product"
+        android:layout_below="@+id/editTextCodigo"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButtonGaleria"
+        android:paddingLeft="10dp"
+        android:background="@null"
+        android:src="@drawable/ic_insert_photo_black_48dp"
+        android:layout_alignBottom="@+id/imageViewFoto"
+        android:layout_toEndOf="@+id/textViewDescricao" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButtonCamera"
+        android:paddingLeft="10dp"
+        android:background="@null"
+        android:src="@drawable/ic_add_a_photo_black_48dp"
+        android:layout_alignBottom="@+id/imageButtonGaleria"
+        android:layout_toEndOf="@+id/imageButtonGaleria" />
+
 </RelativeLayout>

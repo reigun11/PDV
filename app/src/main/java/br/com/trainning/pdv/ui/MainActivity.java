@@ -15,9 +15,15 @@ import java.util.List;
 
 import br.com.trainning.pdv.R;
 import br.com.trainning.pdv.domain.model.Produto;
+import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
+import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
+import jim.h.common.android.lib.zxing.integrator.IntentResult;
 import se.emilsjolander.sprinkles.Query;
 
 public class MainActivity extends BaseActivity {
+
+    private ZXingLibConfig zxingLibConfig;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +32,16 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        zxingLibConfig = new ZXingLibConfig();
+        zxingLibConfig.useFrontLight = true;
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                IntentIntegrator.initiateScan(MainActivity.this, zxingLibConfig);
+
             }
         });
 
@@ -88,5 +98,29 @@ public class MainActivity extends BaseActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case IntentIntegrator.REQUEST_CODE:
+
+                IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode,
+                        resultCode, data);
+                if (scanResult == null) {
+                    return;
+                }
+                String result = scanResult.getContents();
+                if (result != null) {
+                    Log.d("SCANBARCODE", "BraCode:" +result);
+
+
+                }
+                break;
+
+            default:
+        }
+
     }
 }

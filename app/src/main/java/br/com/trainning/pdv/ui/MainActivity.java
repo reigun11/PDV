@@ -181,6 +181,10 @@ public class MainActivity extends BaseActivity {
                     Log.d("SCANBARCODE", "BraCode:" +result);
 
 
+
+
+
+
                 }
                 break;
 

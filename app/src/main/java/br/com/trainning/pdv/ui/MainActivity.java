@@ -79,11 +79,7 @@ public class MainActivity extends BaseActivity {
                 // set item width
                 openItem.setWidth(Util.convertPixelsToDp(590.0f,MainActivity.this));
                 // set item title
-                openItem.setTitle("Open");
-                // set item title fontsize
-                openItem.setTitleSize(18);
-                // set item title font color
-                openItem.setTitleColor(Color.WHITE);
+                openItem.setIcon(R.drawable.ic_exposure_plus_1_black_36dp);
                 // add to menu
                 menu.addMenuItem(openItem);
 

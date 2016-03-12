@@ -80,7 +80,7 @@ public class MainActivity extends BaseActivity {
                 openItem.setBackground(new ColorDrawable(Color.rgb(0xC9, 0xC9,
                         0xCE)));
                 // set item width
-                openItem.setWidth(90);
+                openItem.setWidth(Util.convertPixelsToDp(590,getApplicationContext()));
                 // set item title
                 openItem.setTitle("Open");
                 // set item title fontsize
@@ -97,7 +97,7 @@ public class MainActivity extends BaseActivity {
                 deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9,
                         0x3F, 0x25)));
                 // set item width
-                deleteItem.setWidth(90);
+                deleteItem.setWidth(Util.convertPixelsToDp(590,getApplicationContext()));
                 // set a icon
                 deleteItem.setIcon(R.drawable.ic_remove_shopping_cart_white_36dp);
                 // add to menu

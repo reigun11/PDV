@@ -200,6 +200,7 @@ public class MainActivity extends BaseActivity {
                         item.setIdProduto(produto.getCodigoBarras()) ;
                         item.setQuantidade(1);
                         item.save();
+                        popularLista();
 
                     }else{
                         Toast.makeText(MainActivity.this, "Produto não Localizado!", Toast.LENGTH_SHORT).show();

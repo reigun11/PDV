@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="zxinglib_msg_default_status">Coloque o código de barras dentro do retangulo da tela para escaneá-lo. </string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="zxinglib_possible_result_points">#c0ffff00</color>
+    <color name="zxinglib_result_image_border">#ffffffff</color>
+    <color name="zxinglib_result_points">#c000ff00</color>
+    <color name="zxinglib_result_view">#b0000000</color>
+    <color name="zxinglib_status_text">#ffffffff</color>
+    <color name="zxinglib_transparent">#00000000</color>
+    <color name="zxinglib_viewfinder_frame">#ff000000</color>
+    <color name="zxinglib_viewfinder_laser">#ffff0000</color>
+    <color name="zxinglib_viewfinder_mask">#60000000</color>
+    <item name="zxinglib_auto_focus" type="id"/>
+    <item name="zxinglib_decode" type="id"/>
+    <item name="zxinglib_decode_failed" type="id"/>
+    <item name="zxinglib_decode_succeeded" type="id"/>
+    <item name="zxinglib_quit" type="id"/>
+    <item name="zxinglib_return_scan_result" type="id"/>
+    <string name="zxinglib_msg_default_status">Coloque o código de barras dentro do retangulo da tela para escaneá-lo. </string>
+</resources>

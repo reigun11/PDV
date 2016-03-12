@@ -1,0 +1,620 @@
+[
+    {
+        "outputFile": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 67,
+                    "endOffset": 118
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 67,
+                        "endOffset": 118
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 123,
+                    "endColumn": 64,
+                    "endOffset": 183
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 123,
+                        "endColumn": 64,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 188,
+                    "endColumn": 58,
+                    "endOffset": 242
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 58,
+                        "endOffset": 242
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 247,
+                    "endColumn": 56,
+                    "endOffset": 299
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 247,
+                        "endColumn": 56,
+                        "endOffset": 299
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 304,
+                    "endColumn": 56,
+                    "endOffset": 356
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 304,
+                        "endColumn": 56,
+                        "endOffset": 356
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 361,
+                    "endColumn": 56,
+                    "endOffset": 413
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 361,
+                        "endColumn": 56,
+                        "endOffset": 413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 418,
+                    "endColumn": 61,
+                    "endOffset": 475
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 418,
+                        "endColumn": 61,
+                        "endOffset": 475
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 480,
+                    "endColumn": 61,
+                    "endOffset": 537
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 480,
+                        "endColumn": 61,
+                        "endOffset": 537
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 542,
+                    "endColumn": 60,
+                    "endOffset": 598
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 542,
+                        "endColumn": 60,
+                        "endOffset": 598
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 603,
+                    "endColumn": 48,
+                    "endOffset": 647
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 603,
+                        "endColumn": 48,
+                        "endOffset": 647
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 652,
+                    "endColumn": 44,
+                    "endOffset": 692
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 652,
+                        "endColumn": 44,
+                        "endOffset": 692
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 697,
+                    "endColumn": 51,
+                    "endOffset": 744
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 697,
+                        "endColumn": 51,
+                        "endOffset": 744
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 749,
+                    "endColumn": 54,
+                    "endOffset": 799
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 749,
+                        "endColumn": 54,
+                        "endOffset": 799
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 804,
+                    "endColumn": 42,
+                    "endOffset": 842
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 804,
+                        "endColumn": 42,
+                        "endOffset": 842
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 847,
+                    "endColumn": 56,
+                    "endOffset": 899
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 847,
+                        "endColumn": 56,
+                        "endOffset": 899
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 904,
+                    "endColumn": 128,
+                    "endOffset": 1028
+                },
+                "from": {
+                    "file": "C:\\home\\elcio\\AndroidStudioProjectsTrainning\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 904,
+                        "endColumn": 128,
+                        "endOffset": 1028
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 67,
+                    "endOffset": 118
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 67,
+                        "endOffset": 118
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 123,
+                    "endColumn": 64,
+                    "endOffset": 183
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 123,
+                        "endColumn": 64,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 188,
+                    "endColumn": 58,
+                    "endOffset": 242
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 58,
+                        "endOffset": 242
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 247,
+                    "endColumn": 56,
+                    "endOffset": 299
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 247,
+                        "endColumn": 56,
+                        "endOffset": 299
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 304,
+                    "endColumn": 56,
+                    "endOffset": 356
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 304,
+                        "endColumn": 56,
+                        "endOffset": 356
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 361,
+                    "endColumn": 56,
+                    "endOffset": 413
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 361,
+                        "endColumn": 56,
+                        "endOffset": 413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 418,
+                    "endColumn": 61,
+                    "endOffset": 475
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 418,
+                        "endColumn": 61,
+                        "endOffset": 475
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 480,
+                    "endColumn": 61,
+                    "endOffset": 537
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 480,
+                        "endColumn": 61,
+                        "endOffset": 537
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 542,
+                    "endColumn": 60,
+                    "endOffset": 598
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 542,
+                        "endColumn": 60,
+                        "endOffset": 598
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 603,
+                    "endColumn": 48,
+                    "endOffset": 647
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 603,
+                        "endColumn": 48,
+                        "endOffset": 647
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 652,
+                    "endColumn": 44,
+                    "endOffset": 692
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 652,
+                        "endColumn": 44,
+                        "endOffset": 692
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 697,
+                    "endColumn": 51,
+                    "endOffset": 744
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 697,
+                        "endColumn": 51,
+                        "endOffset": 744
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 749,
+                    "endColumn": 54,
+                    "endOffset": 799
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 749,
+                        "endColumn": 54,
+                        "endOffset": 799
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 804,
+                    "endColumn": 42,
+                    "endOffset": 842
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 804,
+                        "endColumn": 42,
+                        "endOffset": 842
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 847,
+                    "endColumn": 56,
+                    "endOffset": 899
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 847,
+                        "endColumn": 56,
+                        "endOffset": 899
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 904,
+                    "endColumn": 128,
+                    "endOffset": 1028
+                },
+                "from": {
+                    "file": "C:\\Users\\android\\AndroidStudioProjects\\PDV\\zXingLib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 904,
+                        "endColumn": 128,
+                        "endOffset": 1028
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -22,6 +24,19 @@ import se.emilsjolander.sprinkles.Query;
 public class EditarProdutoActivity extends BaseActivity {
     @Bind(R.id.spinner)
     Spinner spinner;
+
+    @Bind(R.id.editTextDescricao)
+    EditText editTextDescricao;
+    @Bind(R.id.editTextUnidade) EditText editTextUnidade;
+    @Bind(R.id.editTextPreco) EditText editTextPreco;
+    @Bind(R.id.editTextCodigo) EditText editTextCodigo;
+
+    @Bind(R.id.imageViewFoto)
+    ImageView imageViewFoto;
+    @Bind(R.id.imageButtonCamera)
+    ImageView imageButtonCamera;
+    @Bind(R.id.imageButtonGaleria)
+    ImageView getImageButtonGaleria;
 
     private Produto produto;
 

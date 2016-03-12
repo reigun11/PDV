@@ -106,17 +106,27 @@ public class MainActivity extends BaseActivity {
         listView.setMenuCreator(creator);
 
         listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
+
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+                ItemProduto itemProduto = adapter.getItem(position);
+                Item item = Query.one(Item.class,"select * from item where id = ?", itemProduto.getIdItem()).get();
                 switch (index) {
                     case 0:
-                        // open
+                        //Toast.makeText(getApplicationContext(), "Action 1 for " + itemProduto.getDescricao(), Toast.LENGTH_SHORT).show();
+                        item.setQuantidade(item.getQuantidade()+1);
+                        item.save();
+                        list.clear();
+                        popularLista();
                         break;
                     case 1:
-                        // delete
+                        //Toast.makeText(getApplicationContext(), "Action 2 for " + itemProduto.getDescricao(), Toast.LENGTH_SHORT).show();
+                        item.delete();
+                        list.clear();
+                        popularLista();
+
                         break;
                 }
-                // false : close the menu; true : not close the menu
                 return false;
             }
         });

@@ -36,7 +36,7 @@ public class CustomArrayAdapter extends ArrayAdapter<ItemProduto> {
         TextView tv = (TextView)v.findViewById(R.id.item_label);
         ImageView foto = (ImageView)v.findViewById(R.id.fotoProduto);
         foto.setImageBitmap(Base64Util.decodeBase64(getItem(position).getFoto()));
-        tv.setText(getItem(position).getDescricao()+" "+getItem(position).getQuantidade());
+        tv.setText(getItem(position).getDescricao()+" . "+getItem(position).getUnidade()+"\n Qtd:" +getItem(position).getQuantidade());
         return v;
     }
 }

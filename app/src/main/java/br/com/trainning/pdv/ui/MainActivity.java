@@ -236,6 +236,7 @@ public class MainActivity extends BaseActivity {
             itemProduto.setIdCompra(1);
             itemProduto.setIdItem(item.getId());
             itemProduto.setFoto(produto.getFoto());
+            itemProduto.setUnidade(produto.getUnidade());
             itemProduto.setDescricao(produto.getDescricao());
             itemProduto.setQuantidade(item.getQuantidade());
             itemProduto.setPreco(produto.getPreco());

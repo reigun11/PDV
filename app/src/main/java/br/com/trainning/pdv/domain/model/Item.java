@@ -19,7 +19,7 @@ public class Item extends Model {
     @Column("id_compra")
     private long idCompra;
     @Column("id_produto")
-    private long idProduto;
+    private String idProduto;
     @Column("quantidade")
     private int quantidade;
 
@@ -39,11 +39,11 @@ public class Item extends Model {
         this.idCompra = idCompra;
     }
 
-    public long getIdProduto() {
+    public String getIdProduto() {
         return idProduto;
     }
 
-    public void setIdProduto(long idProduto) {
+    public void setIdProduto(String idProduto) {
         this.idProduto = idProduto;
     }
 

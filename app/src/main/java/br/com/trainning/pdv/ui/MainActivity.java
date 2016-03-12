@@ -12,25 +12,36 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.trainning.pdv.R;
+import br.com.trainning.pdv.domain.adapter.CustomArrayAdapter;
+import br.com.trainning.pdv.domain.model.Item;
+import br.com.trainning.pdv.domain.model.ItemProduto;
 import br.com.trainning.pdv.domain.model.Produto;
 import butterknife.Bind;
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
 import jim.h.common.android.lib.zxing.integrator.IntentResult;
+import se.emilsjolander.sprinkles.CursorList;
 import se.emilsjolander.sprinkles.Query;
 
 public class MainActivity extends BaseActivity {
 
     private ZXingLibConfig zxingLibConfig;
+
+    private List<ItemProduto> list;
+    private int quantidadeItens;
+    private double valorTotal;
+    private CustomArrayAdapter adapter;
 
     @Bind(R.id.listView)
     SwipeMenuListView listView;
@@ -180,8 +191,19 @@ public class MainActivity extends BaseActivity {
                 if (result != null) {
                     Log.d("SCANBARCODE", "BraCode:" +result);
 
+                    Produto produto = Query.one(Produto.class, "select * from produto where codigo_barra = ?", result).get();
+                    if (produto!=null){
 
+                        Item item = new Item();
+                        item.setId(0L);
+                        item.setIdCompra(1L);
+                        item.setIdProduto(produto.getCodigoBarras()) ;
+                        item.setQuantidade(1);
+                        item.save();
 
+                    }else{
+                        Toast.makeText(MainActivity.this, "Produto não Localizado!", Toast.LENGTH_SHORT).show();
+                    }
 
 
 
@@ -192,4 +214,35 @@ public class MainActivity extends BaseActivity {
         }
 
     }
+
+    public void popularLista(){
+        List<Item> listaItem = Query.many(Item.class, "select * from Item where id_compra = ? order by id", 1).get().asList();
+
+        Log.d("TAMANHOLISTA",""+ listaItem.size());
+
+        ItemProduto itemProduto;
+        Produto produto;
+        list = new ArrayList<>();
+        valorTotal=0.0d;
+        quantidadeItens = 0;
+
+        for(Item item:listaItem){
+
+            produto = Query.one(Produto.class,"select * from Produto where codigo_barra = ?", item.getIdProduto()).get();
+            itemProduto = new ItemProduto();
+            itemProduto.setIdCompra(1);
+            itemProduto.setIdItem(item.getId());
+            itemProduto.setFoto(produto.getFoto());
+            itemProduto.setDescricao(produto.getDescricao());
+            itemProduto.setQuantidade(item.getQuantidade());
+            itemProduto.setPreco(produto.getPreco());
+            list.add(itemProduto);
+            valorTotal+=item.getQuantidade()*produto.getPreco();
+            quantidadeItens += item.getQuantidade();
+        }
+        getSupportActionBar().setTitle("PDV "+valorTotal);
+        adapter = new CustomArrayAdapter(this, R.layout.list_item, list);
+        listView.setAdapter(adapter);
+    }
+
 }

@@ -1,7 +1,11 @@
 package br.com.trainning.pdv.ui;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,16 +18,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.trainning.pdv.R;
 import br.com.trainning.pdv.domain.model.Produto;
 import br.com.trainning.pdv.domain.util.Base64Util;
+import br.com.trainning.pdv.domain.util.ImageInputHelper;
 import butterknife.Bind;
+import butterknife.OnClick;
 import se.emilsjolander.sprinkles.Query;
 
-public class EditarProdutoActivity extends BaseActivity {
+public class EditarProdutoActivity extends BaseActivity implements ImageInputHelper.ImageActionListener {
     @Bind(R.id.spinner)
     Spinner spinner;
 
@@ -40,6 +48,7 @@ public class EditarProdutoActivity extends BaseActivity {
     @Bind(R.id.imageButtonGaleria)
     ImageView getImageButtonGaleria;
 
+    private ImageInputHelper imageInputHelper;
     private Produto produto;
 
     @Override
@@ -49,12 +58,27 @@ public class EditarProdutoActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        imageInputHelper = new ImageInputHelper(this);
+        imageInputHelper.setImageActionListener(this);// essa classe ira receber  de volta
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                produto.setDescricao(editTextDescricao.getText().toString());
+                produto.setUnidade(editTextUnidade.getText().toString());
+                produto.setCodigoBarras(editTextCodigo.getText().toString());
+                if(!editTextPreco.getText().toString().equals("")){
+                    produto.setPreco(Double.parseDouble(editTextPreco.getText().toString()));
+                }
+                Bitmap imagem = ((BitmapDrawable)imageViewFoto.getDrawable()).getBitmap();
+
+                produto.setFoto(Base64Util.encodeTobase64(imagem));
+                produto.save();
+
+                Snackbar.make(view, "Produto alterado com sucesso!", Snackbar.LENGTH_SHORT).show();
+
             }
         });
 
@@ -92,9 +116,7 @@ public class EditarProdutoActivity extends BaseActivity {
                     editTextUnidade.setText(produto.getUnidade());
                     editTextCodigo.setText(produto.getCodigoBarras());
                     editTextPreco.setText(String.valueOf(produto.getPreco()));
-                    Bitmap imagem = Base64Util.decodeBase64(produto.getFoto());
-
-                    imageViewFoto.setImageBitmap(imagem);
+                    imageViewFoto.setImageBitmap( Base64Util.decodeBase64(produto.getFoto()));
                 }
             }
 
@@ -105,8 +127,51 @@ public class EditarProdutoActivity extends BaseActivity {
         });
 
 
-
-
     }
+
+    @OnClick(R.id.imageButtonGaleria)
+    public void onClickGaleria(){
+        imageInputHelper.selectImageFromGallery();
+    }
+
+    @OnClick(R.id.imageButtonCamera)
+    public  void onClickCamera(){
+        imageInputHelper.takePhotoWithCamera();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        imageInputHelper.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onImageSelectedFromGallery(Uri uri, File imageFile) {
+        // cropping the selected image. crop intent will have aspect ratio 16/9 and result image
+        // will have size 800x450
+        imageInputHelper.requestCropImage(uri, 100, 100, 0, 0);
+    }
+
+    @Override
+    public void onImageTakenFromCamera(Uri uri, File imageFile) {
+        // cropping the taken photo. crop intent will have aspect ratio 16/9 and result image
+        // will have size 100x100 or 880x500 16.9
+        imageInputHelper.requestCropImage(uri, 100, 100, 0, 0);
+    }
+
+    @Override
+    public void onImageCropped(Uri uri, File imageFile) {
+        try {
+            // getting bitmap from uri
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+
+            imageViewFoto.setImageBitmap(bitmap);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

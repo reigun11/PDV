@@ -12,7 +12,7 @@ import se.emilsjolander.sprinkles.Sprinkles;
 public class PdvApplication extends Application {
 
     @Override
-    public void onCreate() {
+    public void onCreate()  {
         super.onCreate();
 
         Sprinkles sprinkles = Sprinkles.init(getApplicationContext());

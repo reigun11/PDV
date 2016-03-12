@@ -65,6 +65,8 @@ public class CadastroNovoActivity extends BaseActivity implements ImageInputHelp
 
         Log.d("LOCATION","Latitude:"+latitude);
         Log.d("LOCATION","longitude:"+longitude);
+        Log.d("LOCATION","EDITAR Latitude:"+latitude);
+        Log.d("LOCATION","EDITAR longitude:"+longitude);
 
 
         imageInputHelper = new ImageInputHelper(this);

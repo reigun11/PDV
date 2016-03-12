@@ -10,7 +10,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 /**
- * Created by android on 12/03/2016.
+ * Created by elcio on 12/03/16.
  */
 public class Util {
 
@@ -37,13 +37,6 @@ public class Util {
     }
 
 
-    /**
-     * This method converts dp unit to equivalent pixels, depending on device density.
-     *
-     * @param dp A value in dp (density independent pixels) unit. Which we need to convert into pixels
-     * @param context Context to get resources and device specific display metrics
-     * @return A float value to represent px equivalent to dp depending on device density
-     */
     public static float convertDpToPixel(float dp, Context context){
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
@@ -51,17 +44,12 @@ public class Util {
         return px;
     }
 
-    /**
-     * This method converts device specific pixels to density independent pixels.
-     *
-     * @param px A value in px (pixels) unit. Which we need to convert into db
-     * @param context Context to get resources and device specific display metrics
-     * @return A float value to represent dp equivalent to px value
-     */
+
     public static int convertPixelsToDp(float px, Context context){
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
-        int dp = (int)  (px /((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT));
+        int dp = (int) (px / ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT));
         return dp;
     }
+
 }

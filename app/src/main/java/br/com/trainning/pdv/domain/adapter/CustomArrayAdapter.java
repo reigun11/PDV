@@ -16,7 +16,6 @@ import br.com.trainning.pdv.R;
 
 import br.com.trainning.pdv.domain.model.ItemProduto;
 import br.com.trainning.pdv.domain.util.Base64Util;
-
 /**
  * Created by elcio on 02/12/15.
  */
@@ -36,8 +35,7 @@ public class CustomArrayAdapter extends ArrayAdapter<ItemProduto> {
         TextView tv = (TextView)v.findViewById(R.id.item_label);
         ImageView foto = (ImageView)v.findViewById(R.id.fotoProduto);
         foto.setImageBitmap(Base64Util.decodeBase64(getItem(position).getFoto()));
-        tv.setText(getItem(position).getDescricao()+" . "+getItem(position).getUnidade()+"\n Qtd:" +getItem(position).getQuantidade());
+        tv.setText(getItem(position).getDescricao()+" - "+getItem(position).getUnidade()+"\n Qtd: "+getItem(position).getQuantidade());
         return v;
     }
 }
-

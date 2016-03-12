@@ -37,6 +37,7 @@ import se.emilsjolander.sprinkles.Query;
 
 public class MainActivity extends BaseActivity {
 
+
     private ZXingLibConfig zxingLibConfig;
 
     private List<ItemProduto> list;
@@ -46,7 +47,6 @@ public class MainActivity extends BaseActivity {
 
     @Bind(R.id.listView)
     SwipeMenuListView listView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +62,9 @@ public class MainActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 IntentIntegrator.initiateScan(MainActivity.this, zxingLibConfig);
-
             }
         });
-
 
         SwipeMenuCreator creator = new SwipeMenuCreator() {
 
@@ -80,7 +77,7 @@ public class MainActivity extends BaseActivity {
                 openItem.setBackground(new ColorDrawable(Color.rgb(0xC9, 0xC9,
                         0xCE)));
                 // set item width
-                openItem.setWidth(Util.convertPixelsToDp(590,getApplicationContext()));
+                openItem.setWidth(Util.convertPixelsToDp(590.0f,MainActivity.this));
                 // set item title
                 openItem.setTitle("Open");
                 // set item title fontsize
@@ -97,7 +94,7 @@ public class MainActivity extends BaseActivity {
                 deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9,
                         0x3F, 0x25)));
                 // set item width
-                deleteItem.setWidth(Util.convertPixelsToDp(590,getApplicationContext()));
+                deleteItem.setWidth(Util.convertPixelsToDp(590.0f,MainActivity.this));
                 // set a icon
                 deleteItem.setIcon(R.drawable.ic_remove_shopping_cart_white_36dp);
                 // add to menu
@@ -107,6 +104,7 @@ public class MainActivity extends BaseActivity {
 
 // set creator
         listView.setMenuCreator(creator);
+
         listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
@@ -124,27 +122,27 @@ public class MainActivity extends BaseActivity {
         });
 
         popularLista();
+
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         List<Produto> produtos = Query.all(Produto.class).get().asList();
-        if(produtos!= null){
-            for (Produto p:produtos) {
-                Log.d("Produto:", "id-->" + p.getId());
-                Log.d("Produto:", "descricao-->" + p.getDescricao());
-                Log.d("Produto:", "unidade-->" + p.getUnidade());
-                Log.d("Produto:", "Codigo barras-->" + p.getCodigoBarras());
-                Log.d("Produto:", "preco-->" + p.getPreco());
-                Log.d("Produto:", "foto-->" + p.getFoto());
-                Log.d("Produto:", "------------------------");
+        if(produtos!=null){
+            for(Produto p: produtos){
+                Log.d("Produto:","id------------->"+p.getId());
+                Log.d("Produto:","descricao------>"+p.getDescricao());
+                Log.d("Produto:","unidade-------->"+p.getUnidade());
+                Log.d("Produto:","codigo barras-->"+p.getCodigoBarras());
+                Log.d("Produto:","preco---------->"+p.getPreco());
+                Log.d("Produto:","foto----------->"+p.getFoto());
+                Log.d("Produto:","--------------------------------");
             }
         }
     }
 
     @Override
-
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -156,27 +154,22 @@ public class MainActivity extends BaseActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();// pega o elemento do item e aciona
+        int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_novo) { // Reconhecer o elemento action_novo e direciona para a tela de CadastroNovoActivity
-            //Log.d("MainActivity", "Selecionou novo Produto"); // mostra do debug a a atividade da tela principal quando acionado este elemento
-            //return true;
-            Intent telaCadastroNovoIntent = new Intent(MainActivity.this,CadastroNovoActivity.class); //Intenção é  criar a funcao e direcionar a activity atual para a CadastroNovoActivity
-            startActivity(telaCadastroNovoIntent); //roda a intencao
+        if (id == R.id.action_novo) {
 
-
-
+            Intent telaCadastroNovoIntent = new Intent(MainActivity.this,CadastroNovoActivity.class);
+            startActivity(telaCadastroNovoIntent);
 
         }else if(id == R.id.action_edit){
-            //Log.d("MainActivity", "Selecionou editar Produto");
-           // return true;5
-            Intent telaEditarIntent = new Intent(MainActivity.this,EditarProdutoActivity.class); //Intenção é  criar a funcao e direcionar a activity atual para a CadastroNovoActivity
+            Intent telaEditarIntent = new Intent(MainActivity.this,EditarProdutoActivity.class);
             startActivity(telaEditarIntent);
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -191,21 +184,27 @@ public class MainActivity extends BaseActivity {
                 }
                 String result = scanResult.getContents();
                 if (result != null) {
-                    Log.d("SCANBARCODE", "BraCode:" +result);
 
-                    Produto produto = Query.one(Produto.class, "select * from produto where codigo_barra = ?", result).get();
-                    if (produto!=null){
+                    Log.d("SCANBARCODE","BarCode: "+result);
+
+                    Produto produto = Query.one(Produto.class,"select * from produto where codigo_barra = ?",result).get();
+                    if(produto!=null){
 
                         Item item = new Item();
                         item.setId(0L);
                         item.setIdCompra(1L);
-                        item.setIdProduto(produto.getCodigoBarras()) ;
+                        item.setIdProduto(produto.getCodigoBarras());
                         item.setQuantidade(1);
                         item.save();
                         popularLista();
 
+
+
+
+
                     }else{
-                        Toast.makeText(MainActivity.this, "Produto não Localizado!", Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(MainActivity.this, "Produto não localizado !", Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -219,7 +218,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void popularLista(){
-        List<Item> listaItem = Query.many(Item.class, "select * from Item where id_compra = ? order by id", 1).get().asList();
+        List<Item> listaItem = Query.many(Item.class, "select * from item where id_compra = ? order by id", 1).get().asList();
 
         Log.d("TAMANHOLISTA",""+ listaItem.size());
 
@@ -231,12 +230,12 @@ public class MainActivity extends BaseActivity {
 
         for(Item item:listaItem){
 
-            produto = Query.one(Produto.class,"select * from Produto where codigo_barra = ?", item.getIdProduto()).get();
+            produto = Query.one(Produto.class,"select * from produto where codigo_barra = ?", item.getIdProduto()).get();
             itemProduto = new ItemProduto();
             itemProduto.setIdCompra(1);
             itemProduto.setIdItem(item.getId());
-            itemProduto.setFoto(produto.getFoto());
             itemProduto.setUnidade(produto.getUnidade());
+            itemProduto.setFoto(produto.getFoto());
             itemProduto.setDescricao(produto.getDescricao());
             itemProduto.setQuantidade(item.getQuantidade());
             itemProduto.setPreco(produto.getPreco());
@@ -248,5 +247,4 @@ public class MainActivity extends BaseActivity {
         adapter = new CustomArrayAdapter(this, R.layout.list_item, list);
         listView.setAdapter(adapter);
     }
-
 }

@@ -1,5 +1,6 @@
 package br.com.trainning.pdv.ui;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import br.com.trainning.pdv.R;
 import br.com.trainning.pdv.domain.model.Produto;
+import br.com.trainning.pdv.domain.util.Base64Util;
 import butterknife.Bind;
 import se.emilsjolander.sprinkles.Query;
 
@@ -83,7 +85,17 @@ public class EditarProdutoActivity extends BaseActivity {
 
                 Log.d("BARCODE", "selecionado-->" +barCode);
 
+                produto = Query.one(Produto.class,"select * from produto where codigo_barra = ?",barCode).get();
+                if(produto!=null){
 
+                    editTextDescricao.setText(produto.getDescricao());
+                    editTextUnidade.setText(produto.getUnidade());
+                    editTextCodigo.setText(produto.getCodigoBarras());
+                    editTextPreco.setText(String.valueOf(produto.getPreco()));
+                    Bitmap imagem = Base64Util.decodeBase64(produto.getFoto());
+
+                    imageViewFoto.setImageBitmap(imagem);
+                }
             }
 
             @Override

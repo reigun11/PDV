@@ -27,6 +27,7 @@ import br.com.trainning.pdv.domain.adapter.CustomArrayAdapter;
 import br.com.trainning.pdv.domain.model.Item;
 import br.com.trainning.pdv.domain.model.ItemProduto;
 import br.com.trainning.pdv.domain.model.Produto;
+import br.com.trainning.pdv.domain.util.Util;
 import butterknife.Bind;
 import jim.h.common.android.lib.zxing.config.ZXingLibConfig;
 import jim.h.common.android.lib.zxing.integrator.IntentIntegrator;
@@ -122,6 +123,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        popularLista();
     }
 
     @Override
@@ -241,7 +243,7 @@ public class MainActivity extends BaseActivity {
             valorTotal+=item.getQuantidade()*produto.getPreco();
             quantidadeItens += item.getQuantidade();
         }
-        getSupportActionBar().setTitle("PDV "+valorTotal);
+        getSupportActionBar().setTitle("PDV "+ Util.getFormatedCurrency(String.valueOf(valorTotal)));
         adapter = new CustomArrayAdapter(this, R.layout.list_item, list);
         listView.setAdapter(adapter);
     }

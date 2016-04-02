@@ -15,8 +15,31 @@
     <com.mapbox.mapboxsdk.views.MapView
         android:id="@+id/mapview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        mapbox:access_token="pk.eyJ1IjoiZWxjaW9hYnIiLCJhIjoiY2loeHBqYXNmMDNianQzbTF2M3YyeGcyaiJ9.A1v3YjikXm14D9U4LlPKEQ"
-        />
+        android:layout_height="wrap_content"
+        mapbox:access_token="pk.eyJ1IjoiZWxjaW9hYnIiLCJhIjoiY2loeHBqYXNmMDNianQzbTF2M3YyeGcyaiJ9.A1v3YjikXm14D9U4LlPKEQ">
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent">
+            <Button
+                android:text="Ruas"
+                android:id="@+id/butruas"
+                android:layout_weight="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></Button>
+
+            <Button
+                android:text="Satélite"
+                android:id="@+id/butsatelite"
+                android:layout_weight="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></Button>
+        </LinearLayout>
+    </com.mapbox.mapboxsdk.views.MapView>
+
+
 
 </RelativeLayout>

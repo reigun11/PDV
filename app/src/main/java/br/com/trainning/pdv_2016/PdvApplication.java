@@ -33,6 +33,7 @@ public class PdvApplication extends Application {
                                 "preco REAL,"+
                                 "codigo_barra TEXT,"+
                                 "foto TEXT,"+
+                                "status INTEGER,"+
                                 "latitude REAL,"+
                                 "longitude REAL"+
                                 ")"

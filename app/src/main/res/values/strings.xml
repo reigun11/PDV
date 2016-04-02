@@ -5,5 +5,6 @@
     <string name="action_edit">Editar produto</string>
     <string name="title_activity_cadastro_novo">CadastroNovoActivity</string>
     <string name="title_activity_editar_produto">EditarProdutoActivity</string>
+    <string name="sincronizar_produtos">Sincronizar Produtos</string>
 
 </resources>

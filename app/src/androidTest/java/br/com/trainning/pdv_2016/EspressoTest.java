@@ -48,7 +48,7 @@ public class EspressoTest {
     private final String TESTE_DESCRICAO="Produto Teste";
     private final String TESTE_UNIDADE="pc";
     private final String TESTE_PRECO="4.83";
-    private final String TESTE_CODIGO_BARRA="789000000000";
+    private final String TESTE_CODIGO_BARRA="55555555577766677";
     private final String TESTE_FOTO="foto";
     private final String TESTE_DESCRICAO_REPLACE="Produto Teste Editado";
     private final String TESTE_UNIDADE_REPLACE="un";

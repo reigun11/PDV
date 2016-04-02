@@ -38,6 +38,9 @@
             android:label="@string/title_activity_editar_produto"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.MapaActivity"></activity>
+
+        <service android:name="com.mapbox.mapboxsdk.telemetry.TelemetryService" />
+
     </application>
 
 </manifest>

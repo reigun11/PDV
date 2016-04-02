@@ -210,7 +210,10 @@ public class MainActivity extends BaseActivity {
         }else if(id == R.id.action_edit){
             Intent telaEditarIntent = new Intent(MainActivity.this,EditarProdutoActivity.class);
             startActivity(telaEditarIntent);
-        } else if(id == R.id.action_sincronia){
+        } else if(id == R.id.action_mapa){
+            Intent mapaIntent = new Intent(MainActivity.this,MapaActivity.class);
+            startActivity(mapaIntent);
+        }else if(id == R.id.action_sincronia){
 
             dialog.show();
             new APIClient().getRestService().getAllProdutos(callbackProdutos);

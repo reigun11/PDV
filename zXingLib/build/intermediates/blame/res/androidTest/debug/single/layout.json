@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/richardyukio/AndroidStudioProjects/PDV/zXingLib/build/intermediates/res/merged/androidTest/debug/layout/zxinglib_capture.xml",
+        "source": "/Users/richardyukio/AndroidStudioProjects/PDV/zXingLib/build/intermediates/bundles/debug/res/layout/zxinglib_capture.xml"
+    },
+    {
         "merged": "/home/elcio/AndroidStudioProjects/PDV_2016/zXingLib/build/intermediates/res/merged/androidTest/debug/layout/zxinglib_capture.xml",
         "source": "/home/elcio/AndroidStudioProjects/PDV_2016/zXingLib/build/intermediates/bundles/debug/res/layout/zxinglib_capture.xml"
     }

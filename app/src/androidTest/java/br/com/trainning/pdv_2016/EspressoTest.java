@@ -48,7 +48,7 @@ public class EspressoTest {
     private final String TESTE_DESCRICAO="Produto Teste";
     private final String TESTE_UNIDADE="pc";
     private final String TESTE_PRECO="4.83";
-    private final String TESTE_CODIGO_BARRA="55555555577766677";
+    private final String TESTE_CODIGO_BARRA="78918057827";
     private final String TESTE_FOTO="foto";
     private final String TESTE_DESCRICAO_REPLACE="Produto Teste Editado";
     private final String TESTE_UNIDADE_REPLACE="un";
@@ -68,7 +68,7 @@ public class EspressoTest {
         }
 
         try {
-          String response =  new APIClient().getRestService().deleteProduto(TESTE_CODIGO_BARRA);
+            String response =  new APIClient().getRestService().deleteProduto(TESTE_CODIGO_BARRA);
             Log.d("RETROFIT:","message:"+response);
 
         }catch(Exception e){
@@ -96,18 +96,22 @@ public class EspressoTest {
                 .perform(click());
 
         onView(withId(getResourceId("editTextDescricao")))
-                .perform(typeText(TESTE_DESCRICAO));
+                .perform(typeText(TESTE_DESCRICAO), closeSoftKeyboard());
         onView(withId(getResourceId("editTextUnidade")))
-                .perform(typeText(TESTE_UNIDADE));
+                .perform(typeText(TESTE_UNIDADE), closeSoftKeyboard());
         onView(withId(getResourceId("editTextPreco")))
-                .perform(typeText(TESTE_PRECO));
+                .perform(typeText(TESTE_PRECO), closeSoftKeyboard());
         onView(withId(getResourceId("editTextCodigo")))
                 .perform(typeText(TESTE_CODIGO_BARRA), closeSoftKeyboard());
+
+        // Now we wait
+        IdlingResource idlingResource1 = new ElapsedTimeIdlingResource(waitingTime);
+        Espresso.registerIdlingResources(idlingResource1);
 
 
         onView(withId(getResourceId("fab"))).perform(click());
 
-
+        Espresso.unregisterIdlingResources(idlingResource1);
         // Now we wait
         IdlingResource idlingResource = new ElapsedTimeIdlingResource(waitingTime);
         Espresso.registerIdlingResources(idlingResource);
@@ -127,14 +131,18 @@ public class EspressoTest {
         onView(withId(getResourceId("editTextPreco"))).check(matches(withText(TESTE_PRECO)));
         onView(withId(getResourceId("editTextCodigo"))).check(matches(withText(TESTE_CODIGO_BARRA)));
 
-        onView(withId(getResourceId("editTextDescricao"))).perform(clearText(), typeText(TESTE_DESCRICAO_REPLACE));
-        onView(withId(getResourceId("editTextUnidade"))).perform(clearText(), typeText(TESTE_UNIDADE_REPLACE));
-        onView(withId(getResourceId("editTextPreco"))).perform(clearText(), typeText(TESTE_PRECO_REPLACE));
+        onView(withId(getResourceId("editTextDescricao"))).perform(clearText(), typeText(TESTE_DESCRICAO_REPLACE), closeSoftKeyboard());
+        onView(withId(getResourceId("editTextUnidade"))).perform(clearText(), typeText(TESTE_UNIDADE_REPLACE), closeSoftKeyboard());
+        onView(withId(getResourceId("editTextPreco"))).perform(clearText(), typeText(TESTE_PRECO_REPLACE), closeSoftKeyboard());
 
+        Espresso.unregisterIdlingResources(idlingResource);
+        // Now we wait
+        IdlingResource idlingResource3 = new ElapsedTimeIdlingResource(waitingTime);
+        Espresso.registerIdlingResources(idlingResource3);
 
         onView(withId(getResourceId("fab"))).perform(click());
 
-        Espresso.unregisterIdlingResources(idlingResource);
+        Espresso.unregisterIdlingResources(idlingResource3);
         // Now we wait
         IdlingResource idlingResource2 = new ElapsedTimeIdlingResource(waitingTime);
         Espresso.registerIdlingResources(idlingResource2);

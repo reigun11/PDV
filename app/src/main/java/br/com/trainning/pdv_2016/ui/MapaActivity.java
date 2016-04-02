@@ -42,7 +42,10 @@ public class MapaActivity extends BaseActivity {
 
 
         for(Produto produto : listaProdutos) {
-            Log.d("PRODUTO", produto.toString());
+            Log.d("PRODUTO", produto.getLatitude()+" "+produto.getLongitude());
+            if(produto.getLatitude()+produto.getLongitude()!=0.0){
+
+            }
             mapView.addMarker(new MarkerOptions()
                     .position(new LatLng(produto.getLatitude(), produto.getLongitude()))
                     .title(produto.getDescricao())

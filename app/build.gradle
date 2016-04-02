@@ -30,19 +30,20 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:design:23.2.0'
+    compile project(':zXingLib')
+    compile('com.mapbox.mapboxsdk:mapbox-android-sdk:4.0.0@aar') {
+        transitive = true
+    }
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'se.emilsjolander:sprinkles:1.3.1'
     compile 'com.mapzen.android:lost:1.0.1'
-    compile project(':zXingLib')
     compile 'com.baoyz.swipemenulistview:library:1.3.0'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.github.d-max:spots-dialog:0.4@aar'
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.4'
     compile 'com.github.javiersantos:MaterialStyledDialogs:1.3'
-    compile ('com.mapbox.mapboxsdk:mapbox-android-sdk:4.0.0@aar'){
-        transitive=true
-    }
+    compile 'com.android.support:support-v4:23.2.1'
 }

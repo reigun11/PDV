@@ -8,4 +8,8 @@
     <string name="sincronizar_produtos">Sincronizar Produtos</string>
     <string name="fechar_a_compra">Fechar a Compra</string>
 
+    <string name="title_activity_mapa">Mapa De produtos</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

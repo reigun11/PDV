@@ -5,7 +5,7 @@ package br.com.trainning.pdv_2016.domain.model;
  */
 public class ItemProduto  {
 
-    private long idCompra;
+    private String idCompra;
     private long idItem;
     private String foto;
     private String descricao;
@@ -13,11 +13,11 @@ public class ItemProduto  {
     private int quantidade;
     private double preco;
 
-    public long getIdCompra() {
+    public String getIdCompra() {
         return idCompra;
     }
 
-    public void setIdCompra(long idCompra) {
+    public void setIdCompra(String idCompra) {
         this.idCompra = idCompra;
     }
 

@@ -2,12 +2,14 @@ package br.com.trainning.pdv_2016.domain.util;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.os.Build;
 import android.util.DisplayMetrics;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.UUID;
 
 /**
  * Created by elcio on 12/03/16.
@@ -50,6 +52,20 @@ public class Util {
         DisplayMetrics metrics = resources.getDisplayMetrics();
         int dp = (int) (px / ((float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT));
         return dp;
+    }
+
+    public static String getUniquePsuedoID() {
+
+        String m_szDevIDShort = "35" + (Build.BOARD.length() % 10) + (Build.BRAND.length() % 10) + (Build.CPU_ABI.length() % 10) + (Build.DEVICE.length() % 10) + (Build.MANUFACTURER.length() % 10) + (Build.MODEL.length() % 10) + (Build.PRODUCT.length() % 10);
+        String serial = null;
+        try {
+            serial = android.os.Build.class.getField("SERIAL").get(null).toString();
+            return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
+        } catch (Exception exception) {
+            serial = "pdv_2016"; // TODO put some default value here.
+        }
+
+        return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
     }
 
 }

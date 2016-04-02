@@ -13,16 +13,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.trainning.pdv_2016.R;
 import br.com.trainning.pdv_2016.domain.adapter.CustomArrayAdapter;
+import br.com.trainning.pdv_2016.domain.model.Carrinho;
+import br.com.trainning.pdv_2016.domain.model.Compra;
 import br.com.trainning.pdv_2016.domain.model.Item;
 import br.com.trainning.pdv_2016.domain.model.ItemProduto;
 import br.com.trainning.pdv_2016.domain.model.Produto;
@@ -52,6 +57,11 @@ public class MainActivity extends BaseActivity {
     private AlertDialog dialog;
 
     private Callback<List<Produto>> callbackProdutos;
+    private Callback<String> callbackCompra;
+
+    private String idCompra;
+    private Carrinho carrinho;
+    private Compra compra;
 
     @Bind(R.id.listView)
     SwipeMenuListView listView;
@@ -64,10 +74,19 @@ public class MainActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
         configureProdutoCallback();
+        configureCompraCallback();
 
         dialog = new SpotsDialog(this,"Carregando....");
 
-
+        List<Item> itens = Query.all(Item.class).get().asList();
+        for(Item item:itens){
+            item.delete();
+        }
+        idCompra = Util.getUniquePsuedoID();
+        carrinho =new Carrinho();
+        carrinho.setIdCompra(idCompra);
+        carrinho.setEncerrada(0);
+        carrinho.setEnviada(0);
 
 
 
@@ -147,6 +166,8 @@ public class MainActivity extends BaseActivity {
 
         popularLista();
 
+
+
     }
 
     @Override
@@ -194,6 +215,47 @@ public class MainActivity extends BaseActivity {
             dialog.show();
             new APIClient().getRestService().getAllProdutos(callbackProdutos);
 
+        } else if(id == R.id.action_fecha_compra){
+
+            List<Item> itens = Query.all(Item.class).get().asList();
+            int quantidadeItens = 0;
+            double precoTotal = 0.0d;
+            Produto produto;
+            for(Item it:itens){
+                quantidadeItens += it.getQuantidade();
+                produto = Query.one(Produto.class,"select * from produto where codigo_barra = ?",it.getIdProduto()).get();
+                precoTotal += it.getQuantidade()* produto.getPreco();
+            }
+
+            compra = new Compra();
+            compra.setCarrinho(carrinho);
+            compra.setItens(itens);
+
+            MaterialStyledDialog dialog = new MaterialStyledDialog(this)
+                    .setTitle("Fechar Compra ?")
+                    .setDescription("Quantidade de volumes: "+quantidadeItens+" - Total R$ "+precoTotal)
+                    .setPositive("Sim", new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(MaterialDialog dialog, DialogAction which) {
+
+                            dialog.dismiss();
+                            MainActivity.this.dialog.show();
+                            new APIClient().getRestService().enviarCompra(compra, callbackCompra);
+                            Log.d("MaterialStyledDialogs", "Do something!");
+                        }
+                    })
+                    .setNegative("Não", new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(MaterialDialog dialog, DialogAction which) {
+
+                            dialog.dismiss();
+                            // nada !!!!!!
+                            Log.d("MaterialStyledDialogs", "Cancelado pelo usuário");
+                        }
+                    })
+                    .build();
+            dialog.show();
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -221,7 +283,7 @@ public class MainActivity extends BaseActivity {
 
                         Item item = new Item();
                         item.setId(0L);
-                        item.setIdCompra(1L);
+                        item.setIdCompra(idCompra);
                         item.setIdProduto(produto.getCodigoBarras());
                         item.setQuantidade(1);
                         item.save();
@@ -247,7 +309,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void popularLista(){
-        List<Item> listaItem = Query.many(Item.class, "select * from item where id_compra = ? order by id", 1).get().asList();
+        List<Item> listaItem = Query.many(Item.class, "select * from item where id_compra = ? order by id", idCompra).get().asList();
 
         Log.d("TAMANHOLISTA",""+ listaItem.size());
 
@@ -261,7 +323,7 @@ public class MainActivity extends BaseActivity {
 
             produto = Query.one(Produto.class,"select * from produto where codigo_barra = ?", item.getIdProduto()).get();
             itemProduto = new ItemProduto();
-            itemProduto.setIdCompra(1);
+            itemProduto.setIdCompra(idCompra);
             itemProduto.setIdItem(item.getId());
             itemProduto.setUnidade(produto.getUnidade());
             itemProduto.setFoto(produto.getFoto());
@@ -306,4 +368,35 @@ public class MainActivity extends BaseActivity {
             }
         };
     }
+
+
+    private void configureCompraCallback() {
+
+        callbackCompra = new Callback<String>() {
+
+            @Override public void success(String resultado, Response response) {
+
+                List<Item> itens = Query.all(Item.class).get().asList();
+                for(Item it:itens){
+                    it.delete();
+                }
+                carrinho = new Carrinho();
+                 idCompra=Util.getUniquePsuedoID();
+                carrinho.setIdCompra(idCompra);
+                carrinho.setEnviada(0);
+                carrinho.setEncerrada(0);
+                popularLista();
+
+                dialog.dismiss();
+
+            }
+
+            @Override public void failure(RetrofitError error) {
+
+                dialog.dismiss();
+                Log.e("RETROFIT", "Error:"+error.getMessage());
+            }
+        };
+    }
+
 }

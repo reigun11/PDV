@@ -40,6 +40,8 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.github.d-max:spots-dialog:0.4@aar'
+    compile 'com.github.javiersantos:MaterialStyledDialogs:1.3'
+
 
 
 }

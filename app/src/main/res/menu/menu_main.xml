@@ -17,5 +17,10 @@
         android:orderInCategory="100"
         android:title="@string/sincronizar_produtos"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_fecha_compra"
+        android:orderInCategory="100"
+        android:title="@string/fechar_a_compra"
+        app:showAsAction="never" />
 
 </menu>
